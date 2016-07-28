@@ -2,34 +2,147 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Literature-connector by dsten</title>
+    <title>Data Science Connectors</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
+  
+<head>
+<style>
+body {margin:0;}
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F5F5F5;;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+li.nav {
+    float: left;
+}
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    color: gray;
+    background-color: #ddd;
+}
+.active {
+    background-color: #4CAF50;
+}
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 9px 18px;
+   -webkit-border-radius: 18px;
+   -moz-border-radius: 18px;
+   border-radius: 18px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 16px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+  
+  .line-separator{
+  height:1px;
+  background:#717171;
+  border-bottom:1px solid #313030;
+}
+
+.title {
+    border-bottom: 1px solid #dedede;
+}
+
+
+.quick-list-item {
+  background-color:#e6f3ff;
+  border-left:solid #0072c1;
+  color:black;
+  margin:10px 0;
+  min-height:100px;
+  padding:10px;
+}
+
+.quick-list-item:hover {
+  background-color:#CAE1FF;
+}
+
+.quick-list-item > hr {
+  margin:5px 0;
+}
+
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+.tg .tg-dn63{background-color:#D2E4FC;font-size:14px;color:#000000;vertical-align:top}
+.tg .tg-3xcb{font-size:14px;color:#000000;vertical-align:top}
+.tg .tg-2zhz{font-size:14px;color:#000000;text-align:center;vertical-align:top}
+  
+</style>
+</head>
+
+<ul class="nav" align="right">
+  <li class="nav"><a class="active" href="http://data8.org/connector">Connectors</a></li>
+  <li class="nav"><a class="active" href="http://dataconnect.berkeley.edu/">DataConnect</a></li>
+  <li class="nav"><a href="https://data-8.appspot.com/sp16/course">Data8.org</a></li>
+  <li class="nav"><a href="http://databears.berkeley.edu">Databears</a></li>
+</ul>
+
+  
   <body>
     <section class="page-header">
-      <h1 class="project-name">L&S 88-2 Literature and Data</h1>
-      <h2 class="project-tagline">A Spring 2016 Data Science Connector Course </h2>
-      <h3>CCN: 52239 | Teddy Roland | Tuesday 4:00-6:00 PM | 105 Latimer | Units: 2</h3>
-      <a href="http://data8.org/" class="btn">Data8.org</a>
+      <h1 class="project-name">Data Science Connectors</h1>
+      <h2 class="project-tagline">Fall 2016 Companion Courses to Data 8 (Fundamentals of Data Science)</h2>
+      <h3>University of California, Berkeley</h3>
+      <!--<a href="http://data8.org/" class="btn">Data8.org</a>
       <a href="http://databears.berkeley.edu/" class="btn">Databears</a>
+      <a href="http://www.ischool.berkeley.edu/courses/i88a" class="btn">Course Page</a>
+      <a href="https://bcourses.berkeley.edu/courses/1412776" class="btn">bCourses</a>
+      <a href="page.html" class="btn">JL</a> -->
+
     </section>
 
     <section class="main-content">
-      <h3>Welcome to L&S 88-2 Literature and Data</h3>
- 
-
-
-
-<p>From our off-hand Tweets to the well-wrought urn of poetry, text functions both as a device for communication and a way of examining the world around us. We use text to lay out our thoughts in argumentative essays, speeches, and novels that have power of influence at the grand-scale of politics and at the personal scale of our selves. However, vast reams of this text lie apparently beyond our reach: it would be as difficult to sit down and read every blog post from a given day as it would be to read every novel in the library. Data science opens new avenues to “read” at previously untold scale, but if we did read every novel, would that change which ones we thought were important? Would we have to learn a different kind of reading all together? In this course, we will apply methods learned in Foundations of Data Science to sets of literary texts in order to expand our reading practices. This humanities-oriented approach will require us to think about the limits of both new and traditional reading methods and how we make arguments based on data.</p>
-
-<p>This course will have three, overlapping phases. In the first, we will read theoretical texts and examples of traditional reading practices, especially “close reading,” in order to think about how interpretive arguments are made and what evidence is used to back them up. In the second and largest phase, we will experiment with popular statistical methods that have recently gained visibility in literary study, and consider them as forms of “distant reading.” This will emphasize hands-on interaction with texts, programming work-flow, and collaboration. The final part of the class will return to the theoretical question of whether these data science methods offer us new interpretations of literature, and what problems remain unsettled.</p>
-
-<p>The final project in this course will require students to write a paper, in which interpretive, literary arguments rely on both data and traditional evidence.</p>
-  </body>
+      
+      <h2 class="title" style="color:#32324e;">Announcements</h2>
+      
+      <ul>
+        <li>Final Paper Proposals are due!</li>
+        <li>Office hours have been moved to Soda Hall for this week</li>
+        <li>Midterm regrades are due 4/15/16</li>
+      </ul>
   
-<p>For more information on the Data Science Education Program at UC Berkeley, please visit databears.berkeley.edu</p>
+    </section>
+      
+  </body> 
+
 </html>
