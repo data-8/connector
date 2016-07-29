@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">s
     <title>Data Science Connectors</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href=images/dslogo.png>
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
@@ -26,19 +27,31 @@ ul.nav {
 li.nav {
     float: left;
 }
+ul {
+  list-style-type: square;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #F5F5F5;;
+  width: 100%;
+}
 li a {
     display: block;
-    color: blue;
+    color: black;
     text-align: left;
-    padding: 10px 10px;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    color: black;
+    background-color: #ADD8E6;
     text-decoration: underline;
 }
-li a:hover:not(.active) {
-    color: gray;
-    background-color: #ddd;
-}
 .active {
-    background-color: #b3d9ff;
+    background-color: #ddd;
+    color: black;
+    text-decoration: none;
+    padding: 14px 16px
 }
 .button {
    border-top: 1px solid #96d1f8;
@@ -72,7 +85,7 @@ li a:hover:not(.active) {
    background: #99ccff;
    }
   
-  .line-separator{
+.line-separator{
   height:1px;
   background:#717171;
   border-bottom:1px solid #313030;
@@ -144,7 +157,8 @@ li a:hover:not(.active) {
         <li> <a href="http://data8.org/connector/cognitive-neuroscience">Data Science for Cognitive Neuroscience</a> </li>
         <li> <a href="http://data8.org/connector/probability">Probability and Mathematical Statistics in Data Science</a> </li>
       </ul>
-  
+
+
     </section>
       
   </body> 
