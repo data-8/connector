@@ -73,7 +73,7 @@ is the maximum of the $n$ numbers you observed -- call this $X$. Note that $X$ i
 because it is a summary of the set of the $n$ randomly sampled serial numbers that you observed.
 
 We will ask here: if $N$ were known, how would $X$ be distributed? For any value $k < N$, what
-is the the probability that $X$ would take a particular value $k$?
+is the probability that $X$ would take a particular value $k$?
 
 \subsection*{Version With Replacement}
 Suppose that we are able to observe $n$ airplanes with replacement. For example, we have a spotter with
@@ -82,11 +82,11 @@ sampling procedure, we could see the same aircraft multiple times, so we can thi
 sampling serial numbers with replacement (granted, the assumption that these serial numbers are sampled at random
 is a stretch).
 
-Supposing that we know $N$, what is the probability that $X$ is equal to a particular value $k$, $P(X = k)$?
+Supposing that we know $N$, what is the probability that $X$ is equal to a particular value $k$, written $P(X = k)$?
 
 To answer this question, it turns out that it is easier to write down the proability that the maximum is \emph{at most} $k$.
-Note that for the maximum to be less than or equal to $k$, all $n$ serial numbers would have had to be less than or equal to $k$,
-so
+Note that for the maximum to be less than or equal to $k$, all $n$ serial numbers would have had to be less than or equal to $k$.
+Since $k$ of the $N$ possible serial numbers are less than or equal to $k$,
 $$
 P(X \leq k) = \left(\frac{k}{N}\right)^n.
 $$
@@ -144,7 +144,7 @@ $$
 P(X = k) = \frac{{k \choose n}\left(1 - \frac{k-n}{k}\right)}{{N \choose n}} = \frac{{k \choose n}\left(\frac{n}{k}\right)}{{N \choose n}}.
 $$
 
-Again, we can use this to visualize the distribution of $X$. As above, suppose $N = 1000$, and we observe $n = 15$ airplanes at random with replacement, the maximum observed value $X$ has a
+Again, we can use this to visualize the distribution of $X$. As above, suppose $N = 1000$, and we observe $n = 15$ airplanes at random without replacement, the maximum observed value $X$ has a
 mass function that looks like the following:
 
 \begin{figure}[h!]
