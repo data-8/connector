@@ -1,0 +1,90 @@
+\documentclass[11pt]{article}
+\usepackage{fancyhdr}
+\usepackage[vmargin=3.5cm, hmargin=2cm]{geometry}
+\usepackage{amsmath, amsfonts, amsthm}
+\usepackage{graphicx}
+\usepackage{moreverb}
+\usepackage{enumerate}
+\usepackage{bm}
+\usepackage[tiny,compact]{titlesec}
+\pagestyle{fancy}
+\headheight 14pt
+\lhead{UC Berkeley}
+\chead{}
+\rhead{Stat 88 Fall 2016}
+\rfoot{}
+\cfoot{\thepage}
+\lfoot{}
+
+\parindent0pt  % to stop indenting paragraphs
+\parskip1.5ex  % to insert vertical space between paragraphs
+
+% Different font in captions
+\newcommand{\captionfonts}{\small}
+
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+
+\newcommand{\V}{\mathrm{Var}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\mbf}{\mathbf}
+\newcommand{\mr}{\mathrm}
+\newcommand{\yiobs}{Y_i^\mr{obs}}
+\newcommand{\yobs}{Y^\mr{obs}}
+\newcommand{\yimis}{Y_i^\mr{mis}}
+\newcommand{\ymis}{Y^\mr{mis}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\utilde}{\underset{\widetilde{}}}
+\newcommand{\txt}{\texttt}
+
+\begin{document}
+\centerline{\textbf{Homework 5}}
+\centerline{Due on Gradescope 10/11/2016 at 4:00PM (Before Lecture)}
+
+\begin{enumerate}
+\item \underline{Theory Meets Data, Section 5.4, Problem 5}: 
+A fair 6-sided die will be rolled 10 times. Consider the smallest of the 10 numbers rolled.
+\begin{enumerate}
+    \item For each $k$ in the range 1,2,3,4,5,6, find the chance that the smallest number rolled is
+larger than $k$. (It may help to derive a formula that works for any $k$ first).
+    \item For each k in the range 1,2,3,4,5,6, let $p_k$ be the probability that the smallest number rolled is equal to k. Use your answers from the last part to find $p_k$.
+    \item Find the sum of your answers from the last part. Do the sum and get a numerical answer; don’t just explain what the sum ought to be. 
+\end{enumerate}
+
+\item \underline{Deriving Distributions, to appear in TMD}:
+The goal of this problem is for you to use the definitions and notation from class in familiar
+contexts. For each random variable, describe the sample space $\Omega$ (no need to calculate size), write the set of values that $X$ can take, and derive the probability mass function. 
+\begin{enumerate}
+\item $X$ is the number of spots that show on one roll of a fair six-sided die.
+\item $X$ is an “indicator” random variable; it has the value 1 with probability p, and the value 0
+with probability 1 − p. This random variable is a Boolean, that is, it can only be 0 or 1. Just as
+0’s and 1’s are powerful in computing, so also indicators are powerful in probability theory. You’ll see how next week.
+\item $X$ is the number of heads in one toss of a fair coin.
+\item $X$ is the number of heads in two tosses of a fair coin.
+\item $X$ is the number of red cards among two cards picked at random without replacement from
+a standard deck (52 cards of which 26 are red).
+\end{enumerate}
+
+\item \underline{Stock Price}:
+Suppose that TechCo is one of San Francisco's hottest publicly traded tech startups, and its stock price moves in the following way: every day, it either increases by \$1 with probability $p$ or decreases by \$1 with probability $1-p$, and the change on each day is independent. Let $Z$ be the change in the price of TechCo's stock over two weeks; that is, $Z$ is the price of TechCo's stock on Oct 19 minus the price of TechCo's stock today, Oct 5.
+
+\begin{enumerate}
+\item Let $X$ be the number of times in 14 days that TechCo's stock increased. What is the probability that the stock price increased $0 \leq k \leq 14$ times in this period?
+
+\item Write $Z$, the change in price, as a function of $X$, the number of times the price increased.
+
+\item What is the probability that the stock price rose overall during the 14 day period?
+
+\item You make a bet with your friend that works like this: You will pay your friend \$5 on Oct 5, and on Oct 19 your friend will pay you $Z$ if $Z$ is positive, and nothing if $Z$ is zero or negative\footnote{For the curious, this sort of agreement is called a \emph{European call option}. Here, the \emph{strike price} is set to today's price.}. What is the probability that you will make an overall profit on this agreement?
+\end{enumerate}
+\end{enumerate}
+\end{document}
