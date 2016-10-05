@@ -1,0 +1,156 @@
+\documentclass[11pt]{article}
+\usepackage{fancyhdr}
+\usepackage[vmargin=3.5cm, hmargin=2cm]{geometry}
+\usepackage{amsmath, amsfonts, amsthm}
+\usepackage{graphicx}
+\usepackage{moreverb}
+\usepackage{enumerate}
+\usepackage{bm}
+\usepackage[tiny,compact]{titlesec}
+\pagestyle{fancy}
+\headheight 14pt
+\lhead{UC Berkeley}
+\chead{}
+\rhead{Stat 88 Fall 2016}
+\rfoot{}
+\cfoot{\thepage}
+\lfoot{}
+
+\parindent0pt  % to stop indenting paragraphs
+\parskip1.5ex  % to insert vertical space between paragraphs
+
+% Different font in captions
+\newcommand{\captionfonts}{\small}
+
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+
+\newcommand{\V}{\mathrm{Var}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\mbf}{\mathbf}
+\newcommand{\mr}{\mathrm}
+\newcommand{\yiobs}{Y_i^\mr{obs}}
+\newcommand{\yobs}{Y^\mr{obs}}
+\newcommand{\yimis}{Y_i^\mr{mis}}
+\newcommand{\ymis}{Y^\mr{mis}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\utilde}{\underset{\widetilde{}}}
+\newcommand{\txt}{\texttt}
+
+\begin{document}
+\centerline{\textbf{Notes on German Airplanes Problem}}
+\subsection*{Premise}
+(This problem is also known as the German tank problem.)
+
+The premise of the problem is that, during WWII, the allies wanted to estimate the number of
+a particular kind of airplane that the Germans had available. Call this number $N$.
+
+The data they had available were the serial numbers on the sides of the airplanes that they
+were able to observe in combat. If we assume that
+\begin{itemize}
+    \item Each airplane was sequentially assigned a number, starting from $1$ and going to $N$, and
+    \item The airplanes are observed at random (we will consider both with and without replacement),
+\end{itemize}
+you could try to construct a guess of the total number of airplanes $N$.
+
+{\bf Disclaimer:} The math in this problem does \emph{not} show you how to come up with a good estimate of
+$N$. Instead, we will think about how a particular random variable would be distributed if we knew
+$N$. Down the line, we will use these calculations to ask questions like ``Were the data that I observed
+consistent with $N$ being greater than 1000?'' For now, though, we will stick to probability calculations;
+statistical inference will come later.
+
+Suppose you observe $n$ serial numbers. One reasonable guess for $N$ based on these serial numbers
+is the maximum of the $n$ numbers you observed -- call this $X$. Note that $X$ is a random variable
+because it is a summary of the set of the $n$ randomly sampled serial numbers that you observed.
+
+We will ask here: if $N$ were known, how would $X$ be distributed? For any value $k < N$, what
+is the the probability that $X$ would take a particular value $k$?
+
+\subsection*{Version With Replacement}
+Suppose that we are able to observe $n$ airplanes with replacement. For example, we have a spotter with
+binoculars who is recording the serial numbers of aircraft flying over a particular area every day. Based on this
+sampling procedure, we could see the same aircraft multiple times, so we can think about this as
+sampling serial numbers with replacement (granted, the assumption that these serial numbers are sampled at random
+is a stretch).
+
+Supposing that we know $N$, what is the probability that $X$ is equal to a particular value $k$, $P(X = k)$?
+
+To answer this question, it turns out that it is easier to write down the proability that the maximum is \emph{at most} $k$.
+Note that for the maximum to be less than or equal to $k$, all $n$ serial numbers would have had to be less than or equal to $k$,
+so
+$$
+P(X \leq k) = \left(\frac{k}{N}\right)^n.
+$$
+
+Now we use a trick. Note that because $X$ takes consecutive integer values $\{1, \cdots N\}$, the event $X < k$ is the same as
+$X \leq (k-1)$ -- in other words, to be strictly less than $k$, $X$ needs to be less than or equal to $k-1$. Using this trick,
+$$
+P(X = k) = P(X \leq k) - P(X < k) = P(X \leq k) - P(X \leq (k-1)).
+$$
+
+So the probability mass function has a simple form
+$$
+P(X = k) = \left(\frac{k}{N}\right)^n - \left(\frac{k-1}{N}\right).
+$$
+
+We can use this to visualize the distribution of the maximum observed serial number $X$ for a given value of $N$. For example,
+if we suppose $N = 1000$, and we observe $n = 15$ airplanes at random with replacement, the maximum observed value $X$ has a
+mass function that looks like the following:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/german_replacement.pdf}
+\end{figure}
+
+Under these circumstances, observing a set of planes with maximum number less than, say, 700 is very rare.
+
+\subsection*{Version Without Replacement}
+Now suppose that we observe serial numbers without replacement. This may be a scenario,
+where collect serial numbers from airplans that have been shot down, so once an airplane is observed,
+it won't be sampled again.
+
+Supposing that we know $N$, what is the probability that $X$ is equal to a particular value $k$, $P(X = k)$?
+
+We'll use the same strategy as the ``with replacement'' version of the problem.
+For the maximum to be less than or equal to $k$, all $n$ serial numbers would have had to be less than or equal to $k$.
+In this case there are $k$ serial numbers from which we can sample $n$ values and still have the maximum be less than $k$:
+\begin{align*}
+    P(X \leq k) &= \frac{\textrm{\# of sets of airplanes whose maximum serial number $\leq k$}}{\textrm{\# of sets of airplains whose maximum serial nubmer $\leq N$}}\\
+                &= \frac{{k \choose n}}{{N \choose n}}
+.
+\end{align*}
+
+We'll use the same trick as in the last section:
+$$
+    P(X = k) = P(X \leq k) - P(X < k) = \frac{{k \choose n}}{{N \choose n}} - \frac{{k-1 \choose n}}{{N \choose n}}.
+$$
+
+We can simplify this by using the following identity:
+$$
+    {k \choose n} = \frac{k!}{n!(k-n)!} = \frac{k}{k-n}\frac{(k-1)!}{n!(k-1-n)!} = \frac{k}{k-n} {k-1 \choose n}.
+$$
+
+So, factoring out ${k \choose n}$ in the numerator,
+$$
+P(X = k) = \frac{{k \choose n}\left(1 - \frac{k-n}{k}\right)}{{N \choose n}} = \frac{{k \choose n}\left(\frac{n}{k}\right)}{{N \choose n}}.
+$$
+
+Again, we can use this to visualize the distribution of $X$. As above, suppose $N = 1000$, and we observe $n = 15$ airplanes at random with replacement, the maximum observed value $X$ has a
+mass function that looks like the following:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/german_without.pdf}
+\end{figure}
+
+In this figure, the probability mass function for observing aircraft without replacement is plotted in red, on top of the probability mass function for observing aircraft with replacement, which is barely visible because of how close the probability distributions are. Again, the probability of observing a sample of aircraft with maximum serial number less than, say, 700 is very rare.
+\end{document}
