@@ -122,7 +122,7 @@ Supposing that we know $N$, what is the probability that $X$ is equal to a parti
 
 We'll use the same strategy as the ``with replacement'' version of the problem.
 For the maximum to be less than or equal to $k$, all $n$ serial numbers would have had to be less than or equal to $k$.
-In this case there are $k$ serial numbers from which we can sample $n$ values and still have the maximum be less than $k$:
+In this case there are $k$ serial numbers from which we can sample $n$ values and have the maximum be less than $k$:
 \begin{align*}
     P(X \leq k) &= \frac{\textrm{\# of sets of airplanes whose maximum serial number $\leq k$}}{\textrm{\# of sets of airplains whose maximum serial nubmer $\leq N$}}\\
                 &= \frac{{k \choose n}}{{N \choose n}}
@@ -131,7 +131,7 @@ In this case there are $k$ serial numbers from which we can sample $n$ values an
 
 We'll use the same trick as in the last section:
 $$
-    P(X = k) = P(X \leq k) - P(X < k) = \frac{{k \choose n}}{{N \choose n}} - \frac{{k-1 \choose n}}{{N \choose n}}.
+P(X = k) = P(X \leq k) - P(X < k) = P(X \leq k) - P(X \leq (k-1)) = \frac{{k \choose n}}{{N \choose n}} - \frac{{k-1 \choose n}}{{N \choose n}}.
 $$
 
 We can simplify this by using the following identity:
