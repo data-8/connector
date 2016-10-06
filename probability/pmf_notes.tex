@@ -64,9 +64,9 @@ We call the set of values that $X$ can potentially take the \emph{range} or \emp
 how likely $X$ is to take any one of the values in its range $\mathcal X$. For the examples we consider in this class, where the range $\mathcal X$ is finite (that is, $X$ can only take
 finitely many values), we can represent this distribution using a \emph{probability mass function}, or pmf for short\footnote{The range of $\mathcal X$ of a random variable $X$ is \emph{not} the same as the sample space $\Omega$. $\Omega$ is the \emph{domain} of $X$; $X$ takes outcomes in the sample space $\Omega$ and summarizes them with a number contained in its range $\mathcal X$. In general, $\Omega$ is a set of full descriptions of ways that the random process could have turned out (e.g., sequences of heads and tails), but $\mathcal X$ is a set of numbers.}.
 
-A probability mass function (pmf) takes a particular value $k \in \mathcal X$ (that is, a particular value from the range $\mathcal X$, which we will write as $k$), and returns the probability that $X$ could take that value. We write this function using the notation $P(X = k)$.
+A probability mass function (pmf) takes any value $k \in \mathcal X$ (that is, any value, which we will write as $k$, from the range $\mathcal X$), and returns the probability that $X$ will take that value. We write this function using the notation $P(X = k)$.
 
-Note that $k$ here is just a placeholder value, and we could just as easily have used $x$ or $a$ to represent the argument to the pmf. In those two cases, we would write the same pmf as $P(X = x)$ or $P(X = a)$. The important thing here is that the pmf is a \emph{function} of the placeholder value.
+Note that the symbol $k$ here is just a placeholder variable. We could just as easily have used $x$ or $\heartsuit$ to represent the \emph{argument} to the pmf, and have written the same pmf as $P(X = x)$ or $P(X = \heartsuit)$, respectively. The important thing is that the pmf is a \emph{function} of the placeholder variable.
 
 \subsection*{Example: Binomial Random Variable}
 
@@ -87,7 +87,7 @@ $$
 Probability mass functions are useful for visualizing the distributions of random variables. For each value $k \in \mathcal X$, we can plot the probability that $X$ takes this value. Thus, the probability mass function tells you exactly how to draw a distribution plot. It can be intuitive to think that whenever we define a probability mass function, we are actually defining one of these plots.
 
 \subsection*{Example: Binomial Distribution Plots}
-Using the pmf defined in the last example, if we supply a number of coin flips $n$ and a probability of flipping heads $p$, we can plot the distribution of $X$, the number of heads that we would if we flipped this coin $n$ times.
+Using the pmf defined in the last example, if we supply a number of coin flips $n$ and a probability of flipping heads $p$, we can plot the distribution of $X$, the number of heads that we would see if we flipped this coin $n$ times.
 
 For example, here are the distribution plots for three different settings of $n$ and $p$:
 
@@ -98,7 +98,7 @@ For example, here are the distribution plots for three different settings of $n$
 
 These visualizations help us make observations like the following. When we run a coin flipping procedure like the one described:
 \begin{itemize}
-\item The most likely value that $X$ (the number of heads) will take is $np$.
-\item It is very unlikely that we'll see $X$ take a value in certain parts of the range $\mathcal X$. For example, when $n = 100$ and $p$ is moderate, it's very rare to see a number of heads that differs from the maximum value $np$ by more than 10 heads.
+\item In all three cases, the most likely value that $X$ (the number of heads) will take is $np$.
+\item It is very unlikely that we'll see $X$ take a value in certain parts of the range $\mathcal X$. For example, in both cases where $n = 100$, it's very rare to see a number of heads that differs from the most likely value $np$ by more than 10 heads.
 \end{itemize}
 \end{document}
