@@ -66,17 +66,17 @@ finitely many values), we can represent this distribution using a \emph{probabil
 
 A probability mass function (pmf) takes any value $k \in \mathcal X$ (that is, any value, which we will write as $k$, from the range $\mathcal X$), and returns the probability that $X$ will take that value. We write this function using the notation $P(X = k)$.
 
-Note that the symbol $k$ here is just a placeholder variable. We could just as easily have used $x$ or $\heartsuit$ to represent the \emph{argument} to the pmf, and have written the same pmf as $P(X = x)$ or $P(X = \heartsuit)$, respectively. The important thing is that the pmf is a \emph{function} of the placeholder variable.
+Note that the symbol $k$ here is just a placeholder variable for the \emph{argument} of the pmf. We could equivalently use $x$ or $\heartsuit$ here, and write the same pmf as $P(X = x)$ or $P(X = \heartsuit)$. The important thing is that the pmf is a \emph{function} of the placeholder variable.
 
 \subsection*{Example: Binomial Random Variable}
 
-In class, we talked a Binomial random variable $X$ that we define as follows: Flip a coin $n$ times. Each flip of the coin is independent, and has probability $p$ of coming up heads. Define $X$ as the number of heads that we see after flipping the coin $n$ times. A random variable defined in this way is called a \emph{Binomial} random variable.
+In class, we talked a binomial random variable $X$ that we define as follows: Flip a coin $n$ times. Each flip of the coin is independent, and has probability $p$ of coming up heads. Define $X$ as the number of heads that we see after flipping the coin $n$ times.
 
 In this case, the range of $X$ is $\mathcal X = \{0, \cdots, n\}$, since we can see as few as $0$ heads or as many as $n$ heads. The probability mass function for $X$ is
 $$
-P(X = k) = {n \choose k} p^k (1-p)^{n-k},
+P(X = k) = {n \choose k} p^k (1-p)^{n-k}\hspace{1em}\textrm{, or equivalently, } \hspace{1em}P(X = \heartsuit) = {n \choose k} p^{\heartsuit} (1-p)^{n-\heartsuit}
 $$
-for any $k \in \mathcal X$.
+for any $k \in \mathcal X$ (or any $\heartsuit \in \mathcal X$).
 
 Using this function, you can answer any question of the form ``What is the probability that we see $m$ heads?'' by plugging in $m$ for $k$ and evaluating the expression. For example, if $n$ is greater than or equal to 10 and we ask, ``What is the probability that we see $10$ heads?'', we can plug in $10$ for $k$ and get our answer:
 $$
