@@ -1,0 +1,94 @@
+\documentclass[11pt]{article}
+\usepackage{fancyhdr}
+\usepackage[vmargin=3.5cm, hmargin=2cm]{geometry}
+\usepackage{amsmath, amsfonts, amsthm}
+\usepackage{graphicx}
+\usepackage{moreverb}
+\usepackage{enumerate}
+\usepackage{bm}
+\usepackage[tiny,compact]{titlesec}
+\pagestyle{fancy}
+\headheight 14pt
+\lhead{UC Berkeley}
+\chead{}
+\rhead{Stat 88 Fall 2016}
+\rfoot{}
+\cfoot{\thepage}
+\lfoot{}
+
+\parindent0pt  % to stop indenting paragraphs
+\parskip1.5ex  % to insert vertical space between paragraphs
+
+% Different font in captions
+\newcommand{\captionfonts}{\small}
+
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+
+\newcommand{\V}{\mathrm{Var}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\mbf}{\mathbf}
+\newcommand{\mr}{\mathrm}
+\newcommand{\yiobs}{Y_i^\mr{obs}}
+\newcommand{\yobs}{Y^\mr{obs}}
+\newcommand{\yimis}{Y_i^\mr{mis}}
+\newcommand{\ymis}{Y^\mr{mis}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\utilde}{\underset{\widetilde{}}}
+\newcommand{\txt}{\texttt}
+
+\begin{document}
+\centerline{\textbf{Homework 7}}
+\centerline{Due on Gradescope 11/1/2016 at 4:00PM (Before Lecture)}
+
+\begin{enumerate}
+\item \underline{Bounds}:
+    \begin{enumerate}
+    \item A non-negative random variable $X$ has expectation $E(X) = 100$. Provide the best bound you can for the probability $P(X \geq 500)$.
+    \item Let $X$ be a binomial random variable with size $100$ and probability $p$. Recall that $E(X) = 100p$ and $\mathrm{SD}(X) = 10\sqrt{p(1-p)}$. In terms of $p$, provide the best bound you can for the probability that $X$ is more than 10 away from its mean.
+    \end{enumerate}
+
+\item \underline{Rolling Dice}:
+    You roll a die with 6 faces 10 times. What is the expected number of faces that appear twice? (Hint: Express ``the number of faces that appear twice'' as a sum of indicator random variables).
+
+\item \underline{Shirts, from Stat 88 Spring 2016}: Hipsters run a factory that makes button-down shirts from locally sourced materials. 
+The factory has $n$ workers and is open 365 days each year. 
+Each day the factory is open, each worker makes 6 shirts. 
+But here is the what makes this factory special. 
+The management has a rule that they shut down the factory and everyone takes off work whenever any worker has a birthday. 
+The factory is open on all other days. 
+
+How many workers should the management hire to maximize the expected number of shirts produced in a year? Answer the question in the following steps. Assume that each worker's birthday is selected at random with replacement from 365 possible days.
+    \begin{enumerate}
+    \item In terms of $n$, what is the probability that the factory will be open on a specific day (say, November 1)?
+    \item Let $X$ be the number of days that the factory is open in a year. What is $E(X)$, the expected number of days that the factory will be open?
+
+    \item Let $Y$ be the number of shirts the factory makes in a year. What is $E(Y)$, the expected number of shirts the factory will produce?
+    \item Use calculus to find how many workers the management should hire.
+    \end{enumerate}
+
+\item \underline{Variance and Dependence}: Let $X$ and $Y$ be random variables that can take values 0 or 1.  Under these three scenarios, find $P(X = x, Y = y)$ for all valid values of $x$ and $y$ (you can write this as a table), $E(X + Y)$, and $\V(X+Y)$. These scenarios should be familiar from lecture. As you do this question, note how the variance of the sum $X + Y$ depends on how $X$ and $Y$ are related.
+\begin{enumerate}
+    \item $X$ and $Y$ are independent, and $P(X = 1) = P(Y = 1) = 0.5$.
+    \item $P(X = 1) = 0.5$, and $P(Y = 1 | X = 1) = 1$, and $P(Y = 0 | X = 0) = 1$, so $X$ and $Y$ always match.
+    \item $P(X = 1) = 0.5$, and $P(Y = 1 | X = 1) = 0$, and $P(Y = 0 | X = 0) = 0$, so $X$ and $Y$ never match.
+\end{enumerate}
+
+\item \underline{Weight Measurement}: You have a scale that you are using to weigh a very small amount of a substance that you synthesized in your lab. The scale is well-calibrated so that each time you take a measurement, the expectation of that measurement, $\mu_X$ is the true weight of the sample, but the scale is also noisy, so the standard deviation of each measurement is $\sigma_X = 0.3\textrm{ mg}$.
+
+    You weigh the substance using this scale $n$ times, producing a set of measurements $X_1, \cdots, X_n$. Let $A_n = \frac{1}{n} \sum_{i=1}^n X_i$ be the sample mean of these measurements. You will use $A_n$ as your estimate of the true weight of the substance $\mu_X$. You want to make sure this estimate is close to the true weight $\mu_X$. 
+    \begin{enumerate}
+        \item What is the expectation of $A_n$, $E(A_n)$?
+        \item The standard deviation of your estimate, $\mathrm{SD(A_n)}$ is a good measure of the potential error in your estimate of the weight of the substance. You would like $SD(A_n)$ to be at most $0.01\textrm{ mg}$. What is the smallest number of measurements $n$ that you would need to take for $\mathrm{SD(A_n)}$ to be this small?
+    \end{enumerate}
+\end{enumerate}
+\end{document}
