@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\usepackage{fancyhdr}
+\usepackage[vmargin=3.5cm, hmargin=2cm]{geometry}
+\usepackage{amsmath, amsfonts, amsthm}
+\usepackage{graphicx}
+\usepackage{moreverb}
+\usepackage{enumerate}
+\usepackage{bm}
+\usepackage[tiny,compact]{titlesec}
+\pagestyle{fancy}
+\headheight 14pt
+\lhead{UC Berkeley}
+\chead{}
+\rhead{Stat 88 Fall 2016}
+\rfoot{}
+\cfoot{\thepage}
+\lfoot{}
+
+\parindent0pt  % to stop indenting paragraphs
+\parskip1.5ex  % to insert vertical space between paragraphs
+
+% Different font in captions
+\newcommand{\captionfonts}{\small}
+
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+
+\newcommand{\V}{\mathrm{Var}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\mbf}{\mathbf}
+\newcommand{\mr}{\mathrm}
+\newcommand{\yiobs}{Y_i^\mr{obs}}
+\newcommand{\yobs}{Y^\mr{obs}}
+\newcommand{\yimis}{Y_i^\mr{mis}}
+\newcommand{\ymis}{Y^\mr{mis}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\utilde}{\underset{\widetilde{}}}
+\newcommand{\txt}{\texttt}
+
+\begin{document}
+\centerline{\textbf{Homework 8}}
+\centerline{Due on Gradescope 11/22/2016 at 4:00PM (Before Lecture)}
+
+\begin{enumerate}
+\item \underline{Lost order:} Let $\bm x$ be a list of three numbers $\{1, 3, 5\}$. Let $\bm y$ be a list of another three numbers $\{2, 4, 6\}$, but
+suppose that you lost the order of these three numbers, so you're not sure whether $\bm y$ is $\{4, 2, 6\}$, or $\{6, 4, 2\}$, etc.
+    \begin{enumerate}
+        \item What is the arrangement of numbers in $\bm y$ that has maximum correlation with $\bm x$?
+        \item What is the arrangement of numbers in $\bm y$ that has minimum correlation with $\bm x$?
+    \end{enumerate}
+
+\item \underline{Variance of a sum:}
+We have two lists of numbers $\bm x$ and $\bm y$ each with $n$ elements. $\bm x$ has average $\bar x$ and standard deviation $s_x$;
+$\bm y$ has average $\bar y$ and standard deviation $s_y$.
+$\bm x$ and $\bm y$ have covariance $Cov(\bm x, \bm y)$.
+
+ We construct a new list $\bm z$ with $n$ elements, whose entries are determined by $z_i = x_i + y_i$.
+
+\begin{enumerate}
+\item Write the standard deviation of $z$ in terms of $\bar x$, $\bar y$, $s_x$, $s_y$, and $Cov(\bm x, \bm y)$.
+    (Hint: Use the computational forms of the variance and covariance).
+\item How does correlation between the lists $\bm x$ and $\bm y$ affect the variance of the list $\bm z$?
+\end{enumerate}
+
+\item \underline{Freebie from polling notebook:}
+In the polling example we discussed, we had two lists with length $N$ composed of 1's and 0's: $\bm c$ of candidate preferences for each person in the population, and $\bm t$ of voter turnout status.
+We said that the vote share for the candidate of interest was given by:
+$$
+\mu_v = \frac{\sum_{i=1}^N t_i c_i}{\sum_{i=1}^N c_i},
+$$
+but because it is difficult to measure $t_i$ for each person, we wanted to figure out whether we could instead measure population candidate prefernece instead:
+$$
+\mu_c = \frac{1}{N} \sum_{i=1}^N c_i.
+$$
+
+Prove that if $t_i$ and $c_i$ have correlation 0, then $\mu_c = \mu_v$.
+\end{enumerate}
+\end{document}
