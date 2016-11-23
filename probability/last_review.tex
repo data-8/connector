@@ -1,0 +1,160 @@
+\documentclass[11pt]{article}
+\usepackage{fancyhdr}
+\usepackage[vmargin=3.5cm, hmargin=2cm]{geometry}
+\usepackage{amsmath, amsfonts, amsthm}
+\usepackage{graphicx}
+\usepackage{moreverb}
+\usepackage{enumerate}
+\usepackage{bm}
+\usepackage[tiny,compact]{titlesec}
+\pagestyle{fancy}
+\headheight 14pt
+\lhead{UC Berkeley}
+\chead{}
+\rhead{Stat 88 Fall 2016}
+\rfoot{}
+\cfoot{\thepage}
+\lfoot{}
+
+\parindent0pt  % to stop indenting paragraphs
+\parskip1.5ex  % to insert vertical space between paragraphs
+
+% Different font in captions
+\newcommand{\captionfonts}{\small}
+
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+
+\newcommand{\V}{\mathrm{Var}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\mbf}{\mathbf}
+\newcommand{\mr}{\mathrm}
+\newcommand{\yiobs}{Y_i^\mr{obs}}
+\newcommand{\yobs}{Y^\mr{obs}}
+\newcommand{\yimis}{Y_i^\mr{mis}}
+\newcommand{\ymis}{Y^\mr{mis}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\utilde}{\underset{\widetilde{}}}
+\newcommand{\txt}{\texttt}
+
+\begin{document}
+\centerline{\textbf{Last Quiz Review Problems}}
+You do not need to submit these problems. They are only to aid you in studying for the exam. Please discuss the solutions as openly and explicitly as you'd like on Piazza.
+
+\begin{enumerate}
+\item A supermarket takes a delivery of 100 turkeys to sell during the week before thanksgiving.
+The total weight of the turkeys is 1,500 pounds. The sum of the squared weights of the turkeys is 23,125 pounds squared.
+\begin{enumerate}
+    \item What is the average weight of a turkey at the store?
+    \item What is the standard deviation of weights of turkeys at the store?
+    \item The store sells turkeys according to the following pricing scheme: They charge 3 dollars for the first pound, and then 2.5 dollars for each additional pound, so
+        a turkey weighting 10 pounds would cost $3 + 2.5 \times 9 = \$25.50$. What is the mean and standard deviation of turkey prices?
+    \item There are several customers in the area who are hosting big parties and will want a turkey that weighs more than 25 pounds.
+        At most, how many of these people would the supermarket be able to satisfy?
+    \item At least what proportion of turkeys will weigh between 10 and 20 pounds?
+\end{enumerate}
+
+\item (Continuation of last problem.) A second shipment of 75 turkeys comes into the store. This total weight of this shipment is 975 pounds, and the sum of squared weights is 13,350 pounds squared.
+\begin{enumerate}
+    \item What is the average weight, and standard deviation of weights of turkeys in this shipment?
+    \item What is the average weight of a turkey between the two shipments?
+    \item What is the standard deviation of the weights of turkeys across both shipments? 
+\end{enumerate}
+
+\item You are arranging the Thanksgiving buffet at your house. There are 5 dishes: turkey, stuffing, mashed potatoes, yams, and green beans.
+\begin{enumerate}
+    \item How many different ways are there to arrange these dishes in one line? 
+    \item You decide you will eat exactly three of these dishes. How many different combinations of dishes can you put on your place?
+    \item Your cousin decides to flip a coin (independently) at each dish to decide whether or not to eat that dish. How many possible ways are there for him to fill his plate?
+    \item Your aunt will put exactly 4 dishes on her plate, but has the following rules: one of the dishes must be turkey, and she will not eat green beans. How many different possible ways are there for her to fill her plate?
+\end{enumerate}
+
+\item Your mother forbids your family from talking about politics, religion, or business at Thanksgiving dinner. Unfortunately, your uncle doesn't have a lot of self control. You estimate that, over the course of dinner, the probability that he will talk about politics is about 0.5, the probability that he will talk about religion is 0.3, and the probability that he will talk about business is 0.2.
+\begin{enumerate}
+\item What is the probability that you get through dinner and your mother is happy?
+\item What is the probability that he discusses at least one of these topics at dinner?
+\item What is the expected number of these topics that your uncle will discuss?
+\end{enumerate}
+
+\item You are visiting your friend's family for Thanksgiving, and you have never met them before. There will be 10 people attending. You are trying to figure out how likely it is that a political comment that you are going to make will offend somebody.
+
+You imagine that every person attending has a poitical attitude that can be put on a scale from 1 to 10, with 1 being very liberal and 10 being very conservative. You assume that each person is equally likely to lie at any one of the 10 points on this scale.
+\begin{enumerate}
+\item What is the probability that the most conservative person at dinner is no higher than a 7 on this scale?
+
+\item What is the probability that at least one person at dinner is a 7 on this scale, but nobody is higher than a 7?
+\end{enumerate}
+
+\item Your family is trying to decide sleeping arrangements in the house. There are 10 young people staying in the house who will be divided into two rooms. You will choose a set of 5 people to sleep in the first room and the rest will sleep in the second room. A sleeping arrangement is acceptable if it meets the following two criteria:
+\begin{itemize}
+\item Your two youngest cousins (say, 7 and 8 years old) always fight, so exactly one of them must be in the first room. 
+\item There are 4 people over 18 years old, and exactly 2 of them must be in the first room to supervise the otheres.
+\end{itemize}
+You are too lazy to work out the arrangement by hand, so you decided to do this randomly by choosing a set of 5 people at random to sleep in the first room, and repeat this until you get an acceptable arrangement.
+\begin{enumerate}
+\item For a single draw of 5 people, what is the probability that you will draw an acceptable sleeping arrangement?
+\item You will keep drawing random sets of 5 people from the 10 people until you read an acceptable arrangement. How many times would you have to draw for the expected number of acceptable arrangements to be at least 1?
+\item How many times would you have to draw for the probability of getting at least one acceptable draw to be greater than 3/4?
+\end{enumerate}
+
+\item While you are home for Thanksgiving, your family decides to take a family portrait to use as their holiday card. Everybody will wear a sweater for the portrait. There will be 4 people in the picture.
+
+Each person in your family has 6 sweaters in the following colors: red, blue, green, brown, black, and gray. You each independently choose a sweater at random from your own collection.
+\begin{enumerate}
+\item What is the probability that each person in the picture is wearing a different colored sweater? 
+\item What is the probability taht everybody wears the same colored sweater?
+\end{enumerate}
+
+\item You have 5 potatoes in a sack. 3 are white potatoes and 2 are sweet potatoes. You draw 3 of these potatoes at random without replacement. Let $I_1$ and $I_2$ be indicator random variables, which are 1 if the corresponding drawn potato is white, and 0 otherwise.
+\begin{enumerate}
+\item Are $I_1$ and $I_2$ dependent?
+\item Write out the joint probability mass function of $I_1$ and $I_2$ in a 2-by-2 table.
+\item Derive the pmf of $I_1$ alone. Is it the same as the pmf for $I_2$?
+\item What is the expected number of red tickets that you will draw, $I_1 + I_2$?
+\end{enumerate}
+
+\item Over the weekend, your family makes a movie playlist for everyone to watch while digesting Thanksgiving dinner. You allow each of the 10 people in attendance to independently choose a movie from Netflix. On Netflix (these are made-up numbers) 30\% of movies are a action movies, 20\% are comedies, 30\% are dramas, and 20\% are documentaries.
+
+\begin{enumerate}
+\item What is the probability that exactly 5 of the movies selected are action movies?
+\item What is the probability that fewer than 3 of the movies selected are documentaries?
+\item What is the expected number of dramas that will be selected?
+\item What is the standard deviation of the number of comedies that will be selected?
+\item Let $X$ be the number of comedies selected. Write down an expression in terms of $k$ that gives you the probability that exactly $k$ of the selected movies will be comedies, for any $k$ in $0, \cdots, 10$ that you can plug in.
+\end{enumerate}
+
+\item A supermarket is taking a delivery of sweet potatoes, and wants to know how many pounds of potatoes were delivered. However, their truck scale is broken, so they cannot get an exact measurement.
+
+You are in the supermarket picking up some last-minute items for Thanksgiving dinner. You hear the manager arguing with a clerk about what to do and decide to offer some advice informed by your experience from Stat 88.
+
+Here are some things that are known:
+\begin{itemize}
+\item There were 10,000 potatoes in the shipment.
+\item The minimum weight of a potato is 4 ounces, and the maximum weight is 8 ounces. You use this to conservatively approximate the standard deviation of potato weights at $\sigma = 2$ ounces (this will be an over-estimate, but that is fine).
+\item The supermarket has a scale that can weigh one potato at a time with perfect precision.
+\end{itemize}
+
+You propose that the manager grab a set of $n$ potatoes from the truck, and assume that this is a random sample without replacement. Then you suggest measuring the mean weight of these potatoes, $A_n$ and using $T_n = 10,000 \cdot A_n$ as an estimate of the total weight of potatoes in the truck.
+
+\begin{enumerate}
+\item What is the expectation of $T_n$?
+\item The manager is impatient, and agrees to weigh 20 potatoes. What is an upper bound of the standard deviation of the estimate $T_n$? (\emph{Hint: Compute the standard deviation as if the potatoes were drawn with replacement, and use $\sigma = 2$ as the population standard deviation.})
+\end{enumerate}
+
+\item You run a study at Thanksgiving. You measure how many pounds of turkey each person ate (recorded in a list $\bm x$), and how many hours past midnight they slept (recorded in a list $\bm y$). You find that $r(\bm x, \bm y) = 0.6$.
+\begin{enumerate}
+\item Qualitatively, what sort of pattern does this correlation indicate?
+\item You rerun the study, this time defining $\bm x$ as grams of turkey consumed, and $\bm y$ as minutes slept past midnight. Does $r(\bm x, \bm y)$ change?
+\item Now you define $\bm z$ as money saved by attending Black Friday sales, which start (in your town) at midnight. You estimate that every minute spent shopping (i.e., not sleeping) after midnight is worth 2 dollars in savings. What is $r(\bm x, \bm z)$, or the correlation between turkey eaten and dollars saved?
+\end{enumerate}
+\end{enumerate}
+\end{document}
