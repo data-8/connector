@@ -6,6 +6,7 @@
 \usepackage{moreverb}
 \usepackage{enumerate}
 \usepackage{bm}
+\usepackage{color}
 \usepackage[tiny,compact]{titlesec}
 \pagestyle{fancy}
 \headheight 14pt
@@ -55,34 +56,106 @@ You do not need to submit these problems. They are only to aid you in studying f
 The total weight of the turkeys is 1,500 pounds. The sum of the squared weights of the turkeys is 23,125 pounds squared.
 \begin{enumerate}
     \item What is the average weight of a turkey at the store?
+
+    {\color{red} Call the list of weights $\bm w$. $\bar w = 15$.}
+
     \item What is the standard deviation of weights of turkeys at the store?
+
+    {\color{red} $SD(w) = \sqrt{23125/100 - 15^2} = 2.5$}
+
     \item The store sells turkeys according to the following pricing scheme: They charge 3 dollars for the first pound, and then 2.5 dollars for each additional pound, so
         a turkey weighting 10 pounds would cost $3 + 2.5 \times 9 = \$25.50$. What is the mean and standard deviation of turkey prices?
+
+    {\color{red} Let $w_i$ be the weight of the $i$th turkey.
+
+    Price for turkey $i$: $3 + 2.5(w_i-1)$
+
+    Mean price: $3 + 2.5(\bar w) = 40.5$, so \$40.50.
+
+    SD of price: 2.5 * SD(w) = 6.25, so \$6.25.}
+
     \item There are several customers in the area who are hosting big parties and will want a turkey that weighs more than 25 pounds.
         At most, how many of these people would the supermarket be able to satisfy?
+
+    {\color{red} Markov inequality: $\mathrm{Prop}(w_i: w_i \geq k\bar{w}) \leq \frac{1}{k}$.
+
+    $25 = (5/3)  \bar w \Rightarrow \mathrm{Prop}(w_i : w_i \geq 25) \leq 3/5$.
+
+    So at most 60 people would be able to buy a 25 pound turkey.}
+    
     \item At least what proportion of turkeys will weigh between 10 and 20 pounds?
+
+    {\color{red} Chebyshev inequality: $\mathrm{Prop}(w_i : |w_i - \bar w| \geq k SD(w)) \leq \frac{1}{k^2}$.
+
+    Subtract both sides from 1 to get: $\mathrm{Prop}(w_i : |w_i - \bar w| < k SD(w)) \geq 1 - \frac{1}{k^2}$.
+
+    See that $(10, 20) = \bar w \pm 2 SD(w) \Rightarrow \mathrm{Prop}(w_i : |w_i - \bar w| < 2 SD(w)) \geq 3/4$.
+
+    So at least $3/4$ of turkeys will have weights in this range.}
 \end{enumerate}
 
 \item (Continuation of last problem.) A second shipment of 75 turkeys comes into the store. This total weight of this shipment is 975 pounds, and the sum of squared weights is 13,350 pounds squared.
 \begin{enumerate}
     \item What is the average weight, and standard deviation of weights of turkeys in this shipment?
+
+    {\color{red} Call the list of weights $\bm v$.
+
+    $\bar v = 13$.
+
+    $SD(v) = \sqrt{13350 / 75 - 13^2} = 3$.}
+
     \item What is the average weight of a turkey between the two shipments?
+
+    {\color{red} Call the combined list $\bm u$.
+
+    $\bar u = (100/175)15 + (75/175)13 \approx 14.14$.}
+
     \item What is the standard deviation of the weights of turkeys across both shipments? 
+
+     {\color{red}
+
+    \begin{align*}
+        SD(u) &= \sqrt{\frac{1}{175}\sum_{i=1}^175 u_i^2 - \bar u^2}\\
+              &= \sqrt{((100/175) 231.25 + (75/175) 178) - (14.14)^2}\\
+              &\approx 2.9
+    \end{align*}
+    }
 \end{enumerate}
 
 \item You are arranging the Thanksgiving buffet at your house. There are 5 dishes: turkey, stuffing, mashed potatoes, yams, and green beans.
 \begin{enumerate}
     \item How many different ways are there to arrange these dishes in one line? 
+
+    {\color{red} $5!$}
+
     \item You decide you will eat exactly three of these dishes. How many different combinations of dishes can you put on your place?
+
+    {\color{red} ${5 \choose 3}$}
     \item Your cousin decides to flip a coin (independently) at each dish to decide whether or not to eat that dish. How many possible ways are there for him to fill his plate?
+
+    {\color{red} $2^5$}
+
     \item Your aunt will put exactly 4 dishes on her plate, but has the following rules: one of the dishes must be turkey, and she will not eat green beans. How many different possible ways are there for her to fill her plate?
+
+    {\color{red} ${1 \choose 1}{1 \choose 0}{3 \choose 3} = 1$.}
 \end{enumerate}
 
 \item Your mother forbids your family from talking about politics, religion, or business at Thanksgiving dinner. Unfortunately, your uncle doesn't have a lot of self control. You estimate that, over the course of dinner, the probability that he will talk about politics is about 0.5, the probability that he will talk about religion is 0.3, and the probability that he will talk about business is 0.2.
 \begin{enumerate}
 \item What is the probability that you get through dinner and your mother is happy?
+
+    {\color{red} $P(\textrm{mother happy}) = P(\textrm{no topics discussed}) = 0.5 \cdot 0.7 \cdot 0.8 = 0.28$.}
 \item What is the probability that he discusses at least one of these topics at dinner?
+
+    {\color{red} $P(\textrm{at least one}) = 1- P(\textrm{none}) = 1 - 0.28 = 0.72$.}
 \item What is the expected number of these topics that your uncle will discuss?
+
+    {\color{red} $X = \#\textrm{ topics discussed}.$
+
+    $X = \sum_{i=1}^3 I_{\{\textrm{topic $i$ discussed}\}}$.
+
+    $E(X) = \sum_{i=1}^3 E(I_{\{\textrm{topic $i$ discussed}\}}) = \sum_{i=1}^3 P(\textrm{topic $i$ discussed}) = 0.5 + 0.3 + 0.2 = 1$.}
+    
 \end{enumerate}
 
 \item You are visiting your friend's family for Thanksgiving, and you have never met them before. There will be 10 people attending. You are trying to figure out how likely it is that a political comment that you are going to make will offend somebody.
@@ -91,7 +164,13 @@ You imagine that every person attending has a poitical attitude that can be put 
 \begin{enumerate}
 \item What is the probability that the most conservative person at dinner is no higher than a 7 on this scale?
 
+    {\color{red} $X = \textrm{level of most conservative person}$.
+
+    $P(X \leq 7) = P(\textrm{all 10 people }\leq 7) = (7/10)^{10} \approx 0.028$.}
+
 \item What is the probability that at least one person at dinner is a 7 on this scale, but nobody is higher than a 7?
+    
+    {\color{red} $P(X = 7) = P(X \leq 7) - P(X < 7) = P(X \leq 7) - P(X \leq 6) = (7/10)^{10} - (6/10)^{10} \approx 0.022$.}
 \end{enumerate}
 
 \item Your family is trying to decide sleeping arrangements in the house. There are 10 young people staying in the house who will be divided into two rooms. You will choose a set of 5 people to sleep in the first room and the rest will sleep in the second room. A sleeping arrangement is acceptable if it meets the following two criteria:
@@ -102,8 +181,35 @@ You imagine that every person attending has a poitical attitude that can be put 
 You are too lazy to work out the arrangement by hand, so you decided to do this randomly by choosing a set of 5 people at random to sleep in the first room, and repeat this until you get an acceptable arrangement.
 \begin{enumerate}
 \item For a single draw of 5 people, what is the probability that you will draw an acceptable sleeping arrangement?
+
+    {\color{red} $P(\textrm{acceptable}) = \frac{{2 \choose 1}{4 \choose 2}{4 \choose 2}}{{10 \choose 5}} \approx 0.28$}
 \item You will keep drawing random sets of 5 people from the 10 people until you read an acceptable arrangement. How many times would you have to draw for the expected number of acceptable arrangements to be at least 1?
+
+    {\color{red} Let $I_i = 1$ if $i$th draw is acceptable, $I_i = 0$ otherwise.
+
+    Then for $n$ draws, let $X_n$ be number of acceptable draws.
+
+    $X_n = \sum_{i=1}^n I_i \Rightarrow E(X_n) = \sum_{i=1}^n P(\textrm{$i$th draw acceptable}) = nP(\textrm{acceptable})$.
+
+    So $E(X_n) \geq 1 \Leftrightarrow n \geq 1/P(\textrm{acceptable}) = \frac{{10 \choose 5}}{{2 \choose 1}{4 \choose 2}{4 \choose 2}} = 3.5.$
+
+    So would need to draw 4 times.}
+
 \item How many times would you have to draw for the probability of getting at least one acceptable draw to be greater than 3/4?
+
+    {\color{red} $P(\textrm{at least one acceptable}) = 1-P(\textrm{none acceptable})$.
+
+    For $n$ draws, $P(\textrm{none acceptable}) = (1 - P(\textrm{acceptable}))^n$.
+
+    $P(\textrm{at least one acceptable}) \geq 3/4$
+
+    $\Leftrightarrow (1 - P(\textrm{acceptable}))^n < 1/4$
+
+    $\Leftrightarrow n \log(1 - P(\textrm{acceptable})) < \log(1/4)$ \quad (Remember: $\log(x) < 0$ if $x < 1$.)
+
+    $ \Leftrightarrow n > \frac{\log(1/4)}{\log(1-P(\textrm{acceptable}))} \approx \frac{\log(1/4)}{\log(1-0.28)} \approx 4.22$.
+
+    So would need to draw 5 times.}
 \end{enumerate}
 
 \item While you are home for Thanksgiving, your family decides to take a family portrait to use as their holiday card. Everybody will wear a sweater for the portrait. There will be 4 people in the picture.
@@ -111,25 +217,77 @@ You are too lazy to work out the arrangement by hand, so you decided to do this 
 Each person in your family has 6 sweaters in the following colors: red, blue, green, brown, black, and gray. You each independently choose a sweater at random from your own collection.
 \begin{enumerate}
 \item What is the probability that each person in the picture is wearing a different colored sweater? 
+
+    {\color{red} $P(\textrm{all colors different}) = \frac{6 \cdot 5 \cdot 4 \cdot 3}{6^4} = \frac{\frac{6!}{2!}}{6^4}$.}
 \item What is the probability that everybody wears the same colored sweater?
+
+    {\color{red} $P(\textrm{all same color}) = 1 \cdot \left( \frac{1}{6} \right)^3$.}
 \end{enumerate}
 
 \item You have 5 potatoes in a sack. 3 are white potatoes and 2 are sweet potatoes. You draw 3 of these potatoes at random without replacement. Let $I_1$ and $I_2$ be indicator random variables, which are 1 if the corresponding drawn potato is white, and 0 otherwise.
 \begin{enumerate}
-\item Are $I_1$ and $I_2$ dependent?
+\item Are $I_1$ and $I_2$ dependent? {\color{red} No.}
 \item Write out the joint probability mass function of $I_1$ and $I_2$ in a 2-by-2 table.
+    {\color{red}
+    $$
+    \begin{array}{r|r|r|}
+        &   I_1 = 0 & I_1 = 1\\
+    &&\\
+    \hline
+    &&\\
+    I_2 = 0 & \frac{2}{5}\frac{1}{4}    &   \frac{3}{5} \frac{2}{4}\\
+    &&\\
+    \hline
+    &&\\
+    I_2 = 1 & \frac{2}{5}\frac{3}{4}    &   \frac{3}{5} \frac{2}{4}\\
+    &&\\
+    \hline
+    \end{array}
+    $$}
 \item Derive the pmf of $I_1$ alone. Is it the same as the pmf for $I_2$?
+
+    {\color{red}
+    $P(I_1 = 0) = \frac{2}{5}\left(\frac{1}{4}+\frac{3}{4}\right)$; $P(I_1 = 1) = \frac{3}{5}\left(\frac{2}{4} + \frac{2}{4}\right)$
+
+    $P(I_2 = 0) = \frac{2}{5}\frac{1}{4}+\frac{3}{5}\frac{2}{4}$; $P(I_2 = 1) = \frac{2}{5}\frac{3}{4}+\frac{3}{5}\frac{2}{4}$
+
+    At first these look different, but simplify and see that they are the same.}
 \item What is the expected number of white potatoes that you will draw, $I_1 + I_2$?
+    
+   {\color{red}
+    $E(I_1) = E(I_2) = \frac{3}{5} \Rightarrow E(I_1 + I_2) = \frac{6}{5}$.}
 \end{enumerate}
 
 \item Over the weekend, your family makes a movie playlist for everyone to watch while digesting Thanksgiving dinner. You allow each of the 10 people in attendance to independently choose a movie from Netflix. On Netflix (these are made-up numbers) 30\% of movies are a action movies, 20\% are comedies, 30\% are dramas, and 20\% are documentaries.
 
+{\color{red} These are all binomial problems.}
+
 \begin{enumerate}
 \item What is the probability that exactly 5 of the movies selected are action movies?
+
+{\color{red}
+${10 \choose 5}0.3^5 0.7^5$
+}
 \item What is the probability that fewer than 3 of the movies selected are documentaries?
+
+{\color{red}
+$\sum_{k=1}^2 {10 \choose k}0.2^k 0.8^{10-k}$
+}
 \item What is the expected number of dramas that will be selected?
+
+{\color{red}
+$10 \cdot 0.3 = 3$
+}
 \item What is the standard deviation of the number of comedies that will be selected?
+
+{\color{red}
+$\sqrt{10 \cdot 0.2 \cdot 0.8} \approx 1.26$
+}
 \item Let $X$ be the number of comedies selected. Write down an expression in terms of $k$ that gives you the probability that exactly $k$ of the selected movies will be comedies, for any $k$ in $0, \cdots, 10$ that you can plug in.
+
+{\color{red}
+$P(X = k) = {10 \choose k}0.2^k 0.8^{10-k}$
+}
 \end{enumerate}
 
 \item A supermarket is taking a delivery of sweet potatoes, and wants to know how many pounds of potatoes were delivered. However, their truck scale is broken, so they cannot get an exact measurement.
@@ -147,14 +305,33 @@ You propose that the manager grab a set of $n$ potatoes from the truck, and assu
 
 \begin{enumerate}
 \item What is the expectation of $T_n$?
+
+{\color{red} Call the list of 10,000 potato weights be $\bm w$.
+
+$E(T_n) = 10000 \cdot E(A_n) = 10000 \bar w = 10000 \frac{1}{10000} \sum_{i=1}^{10000} w_i = \sum_{i=1}^{10000} w_i$.
+
+So expectation is total weight.}
 \item The manager is impatient, and agrees to weigh 20 potatoes. What is an upper bound of the standard deviation of the estimate $T_n$? (\emph{Hint: Compute the standard deviation as if the potatoes were drawn with replacement, and use $\sigma = 2$ as the population standard deviation.})
+{\color{red}
+Because sampling is without replacement, standard deviation of $A_n$ is smaller than standard deviation is sampling were with replacement, because there is negative correlation between the weights in our sample. Use the sampled with replacement standard deviation as an upper bound.
+
+$SD(T_n) = 10000 \cdot SD(A_n) < 10000 \cdot \sqrt{\sum_{i=1}^{20} \sigma^2} = \frac{10000 \cdot 2}{\sqrt{20}} \approx 4472 \textrm{ ounces} \approx 280 \textrm{ pounds}$.}
 \end{enumerate}
 
 \item You run a study at Thanksgiving. You measure how many pounds of turkey each person ate (recorded in a list $\bm x$), and how many hours past midnight they slept (recorded in a list $\bm y$). You find that $r(\bm x, \bm y) = 0.6$.
 \begin{enumerate}
 \item Qualitatively, what sort of pattern does this correlation indicate?
+
+{\color{red}
+  In general, people who ate more turkey slept more; people who ate less turkey slept less.   
+}
 \item You rerun the study, this time defining $\bm x$ as grams of turkey consumed, and $\bm y$ as minutes slept past midnight. Does $r(\bm x, \bm y)$ change?
+
+{\color{red} No.}
+
 \item Now you define $\bm z$ as money saved by attending Black Friday sales, which start (in your town) at midnight. You estimate that every minute spent shopping (i.e., not sleeping) after midnight is worth 2 dollars in savings. What is $r(\bm x, \bm z)$, or the correlation between turkey eaten and dollars saved?
+
+{\color{red} -0.6}
 \end{enumerate}
 \end{enumerate}
 \end{document}
