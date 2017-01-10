@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Probability and Mathematical Statistics in Data Science</title>
+    <!-- <link rel="icon" href=images/dslogo.png> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen">
+  </head>
+  
+<head>
+<style>
+body {margin:0;}
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F5F5F5;;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+li.nav {
+    float: left;
+}
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    color: gray;
+    background-color: #ddd;
+}
+.active {
+    background-color: #4CAF50;
+}
+.alive {
+  background-color: #acb1b8;
+}
+  
+.line-separator{
+  height:1px;
+  background:#717171;
+  border-bottom:1px solid #313030;
+}
+
+.title {
+    border-bottom: 1px solid #dedede;
+}
+
+
+.quick-list-item {
+  background-color:#e6f3ff;
+  border-left:solid #0072c1;
+  color:black;
+  margin:10px 0;
+  min-height:100px;
+  padding:10px;
+}
+
+.quick-list-item:hover {
+  background-color:#CAE1FF;
+}
+
+.quick-list-item > hr {
+  margin:5px 0;
+}
+
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+.tg .tg-dn63{background-color:#D2E4FC;font-size:14px;color:#000000;vertical-align:top}
+.tg .tg-3xcb{font-size:14px;color:#000000;vertical-align:top}
+.tg .tg-2zhz{font-size:14px;color:#000000;text-align:center;vertical-align:top}
+  
+</style>
+</head>
+
+<ul class="nav" align="right">
+  <li class="nav"><a class="alive" href="http://data8.org/connector">Connectors</a></li>
+  <li class="nav"><a href="https://bcourses.berkeley.edu/">bCourses</a></li>
+  <li class="nav"><a href="https://data8.org/">Data 8</a></li>
+</ul>
+
+
+</body>
+
+<body>
+  
+  
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">STAT 88 Probability and Mathematical Statistics in Data Science</h1>
+      <h2 class="project-tagline">A Fall 2016 Data Science Connector Course </h2>
+      <h3>CCN:32336 | Alexander D'Amour | Tuesday 4:00-6:00 PM | 60 Evans Hall | Units: 2</h3>
+      <a href="https://piazza.com/class/fall2016#stat88" class="btn">Piazza</a>
+      <a href="#Announcements" class="btn">Announcements</a>
+      <a href="#CourseDescription" class="btn">Course Description</a>
+      <a href="#Text" class="btn">Course Text</a>
+      <a href="#Calendar" class="btn">Calendar</a>
+      <a href="#Contact" class="btn">Contact</a>
+      <a href="#CourseInfo" class="btn">Course Info</a>
+
+    </section>
+
+    <section class="main-content">
+      
+      <a name="Announcements"></a>
+      <h2 class="title" style="color:#32324e;">Announcements</h2>
+      
+      <ul>
+        <li>Welcome to Probability and Mathematical Statistics in Data Science!</li>
+        <!--<li>Office hours have been moved to Soda Hall for this week</li>-->
+        <!--<li>Homework: Worksheet #1</li>-->
+      </ul>
+    
+  <a name="CourseDescription"></a>
+  <h2 class="title">Course Description</h2>
+<p>In this connector course we will state precisely and prove results discovered in DS8 through working with data. Topics include: total variation distance between discrete distributions; the mean, standard deviation, and tail bounds; correlation, and the derivation of the regression equation; probabilities, random variables, and the Central Limit Theorem; probabilistic models; symmetries in random permutations; prior and posterior distributions, and Bayes’ rule.</p>
+<p></p>
+<p>This course is an example of a “technical depth” connector, rather than an “application” connector. It takes the concepts that are revealed through working with data in the main course and develops the statistical or probabilistic basis for them. For example, students in the Foundations course will discover that “for almost all lists of numbers, an overwhelming majority of the entries are within a few standard deviations of the mean.” Students in Stat 88 will learn how to state this result formally as Chebychev’s inequality, and prove it. They will also present a lucid argument with the aid of a suitable diagram.</p>
+<p></p>
+<p>At the end of this connector course, students will have the mathematical knowledge currently contained in STAT 20, 21, and 25. With the combination of this connector and the main course, the students’ knowledge of theoretical statistics will exceed that in the current lower division Statistics courses. In addition, their knowledge will be grounded in working with real data using the computation-intensive techniques of modern data analysis.</p>
+<p></p>
+<p>The sequence of topics has been chosen to be appropriate for students with no more mathematics than one semester of calculus. It is also designed to be as synchronous as possible with the sequence of the Foundations course. However, as the main course contains much material that is purely related to computing, and this course contains some topics that are beyond the mathematical level expected in the Foundations course, perfect synchronicity of this connector with the main course is not possible. In some weeks, Stat 88 will delve further into material already covered in the Foundations course. In other weeks, students will get a theoretical preview in Stat 88 of material that they will encounter later in the Foundations course.</p>
+<p></p>
+
+<a name="Text"></a>
+<h2 class="title">Course Text</h2>
+<p>The course text <a href="theory-meets-data-draft-current.pdf">"Theory Meets Data"</a> will be under active development throughout the semester. The version linked on this page will always be the most recent draft. We will make an announcement on <a href="https://piazza.com/class/fall2016#stat88">Piazza</a> whenever the content of the text has been updated.</p> 
+<p/>
+<p>If you notice any inconsistencies or typos in the course text, please post about them on <a href="https://piazza.com/class/fall2016#stat88">Piazza</a>.</p>
+<a name="Calendar"></a>
+<h2 class="title">Calendar</h2>
+<table class="tg" style="undefined;table-layout: fixed; width: 860px">
+<colgroup>
+<col style="width: 90px">
+<col style="width: 360px">
+<col style="width: 205px">
+<col style="width: 205px">
+</colgroup>
+  <tr>
+    <th class="tg-2zhz" colspan="4">Calendar</th>
+  </tr>
+  <tr>
+    <th class="tg-2zhz" colspan="4"><b>Note:</b> Calendar is final through Week 11 (11/1). Subsequent weeks will almost certainly change to reflect the order of topics covered in Data 8.</th>
+  <tr>
+    <td class="tg-dn63">Date</td>
+    <td class="tg-dn63">Topic</td>
+    <td class="tg-dn63">Reading</td>
+    <td class="tg-dn63">Assignment</td>
+  </tr>
+  <tr>
+    <td class="tg-3xcb">8/30</td>
+    <td class="tg-3xcb">Week 2 : (Data) Summations and averages</td>
+    <td class="tg-3xcb"><a href="theory-meets-data-draft-current.pdf">Course Text, Chapter 1</a>
+                        <br />
+                        <a href="theory-meets-data-draft-current.pdf">Course Text, Appendix</a>
+                        <br />
+                        <a href="http://www.theatlantic.com/business/archive/2016/02/the-invention-of-the-normal-person/463365/">Atlantic article on averages</a>
+    </td>
+    <td class="tg-3xcb"><a href="theory-meets-data-draft-current.pdf">Course Text, Section 1.6</a> Problems 1, 2, 3, 4 (all parts).</td>
+  </tr>
+  <tr>
+    <td class="tg-dn63">9/6</td>
+    <td class="tg-dn63">Week 3 : (Data) Measuring variability</td>
+    <td class="tg-dn63"><a href="theory-meets-data-draft-current.pdf">Course Text, Chapter 2</a>
+                        <br />
+                        <a href="theory-meets-data-draft-current.pdf">Course Text, Chapter 3</a>
+    </td>
+    <td class="tg-dn63"><a href="hw2.pdf">Homework 2 (Edited 9/8 @ 2:30PM)</a></td>
+  </tr>
+  <tr>
+    <td class="tg-3xcb">9/13</td>
+    <td class="tg-3xcb">Week 4 : (Data) Remainder of Chebyshev + Review</td>
+    <td class="tg-3xcb"></td>
+    <td class="tg-3xcb">QUIZ 1 Last 45 mins of class.
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-dn63">9/20</td>
+    <td class="tg-dn63">Week 5 : (Probability) Probability and Approximations</td>
+    <td class="tg-dn63"><a href="theory-meets-data-draft-current.pdf">Course Text, Chapter 4</a></td>
+    <td class="tg-dn63">Homework 3: <a href="theory-meets-data-draft-current.pdf">Course Text, Section 4.5</a> Problems 1, 2, 3, 4.</td>
+  </tr>
+  <tr>
+    <td class="tg-3xcb">9/27</td>
+    <td class="tg-3xcb">Week 6 : (Probability) Sampling and the Binomial Distribution</td>
+    <td class="tg-3xcb"><a href="theory-meets-data-draft-current.pdf">Course Text, Chapter 5</a></td>
+    <td class="tg-3xcb">Homework 4: <a href="theory-meets-data-draft-current.pdf">Course Text, Chapter 5.4</a> Problems 1, 2, 3, 4.</td>
+  </tr>
+  <tr>
+    <td class="tg-dn63">10/4</td>
+    <td class="tg-dn63">Week 7 : (Probability) Random Variables (Distributions)</td>
+    <td class="tg-dn63">
+            <a href="theory-meets-data-draft-current.pdf">Course Text, Chapter 6.1-6.3</a>
+            <br/>
+            <a href="german_airplanes.pdf">Notes on German Airplanes Problem (Updated 10/11 @ 3:30pm)</a>
+            <br/>
+            <a href="pmf_notes.pdf">Notes on Probability Mass Functions</a>
+    </td>
+    <td class="tg-dn63"><a href="hw5.pdf">Homework 5 (Uploaded 10/5 @ 10:20AM)</a</td>
+  </tr>
+  <tr>
+    <td class="tg-3xcb">10/11</td>
+    <td class="tg-3xcb">Week 8 : (Probability) Random Variables (Expectation, Indicators) + Review</td>
+    <td class="tg-3xcb"><a href="theory-meets-data-draft-current.pdf">Course Text, Chapter 6.4</a></td>
+    <td class="tg-3xcb">
+        <a href="quiz2_review_problems.pdf">Quiz 2 Review Problems</a>
+        <br />
+        <a href="quiz2_review_hints.pdf">Quiz 2 Review Problem Hints</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-dn63">10/18</td>
+    <td class="tg-dn63">Week 9 : (Probability) Random Variables (Variance, Standard Deviation)</td>
+    <td class="tg-dn63"><a href="theory-meets-data-draft-current.pdf">Course Text, Chapter 6.5</a></td>
+    <td class="tg-dn63">
+        QUIZ 2 (First 45 minutes of class; Probability through Week 7)
+        <br/>
+        <a href="hw6.pdf">Homework 6 (Updated 10/24 @ 9:50AM)</a> 
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-3xcb">10/25</td>
+    <td class="tg-3xcb">Week 10 : (Probability) Random Variables (Bounds, Sums)</td>
+    <td class="tg-3xcb">
+        <a href="theory-meets-data-draft-current.pdf">Course Text, Chapter 6.6</a>
+        <br/>
+        <a href="theory-meets-data-draft-current.pdf">Course Text, Chapter 7</a>
+
+    </td>
+    <td class="tg-3xcb">
+        <a href="hw7.pdf">Homework 7</a></td>
+  </tr>
+  <tr>
+    <td class="tg-dn63">11/1</td>
+    <td class="tg-dn63">Week 11 : (Data and Probability) Testing and Estimation; Review</td>
+    <td class="tg-dn63"></td>
+    <td class="tg-dn63">Questions from Chapters 6 and 7 for Review</td>
+  </tr>
+  <tr>
+    <td class="tg-3xcb">11/8</td>
+    <td class="tg-3xcb">Week 12 : Quiz / Go watch election results</td>
+    <td class="tg-3xcb"></td>
+    <td class="tg-3xcb">QUIZ 3 (First 45 minutes of class)</td>
+  </tr>
+  <tr>
+    <td class="tg-dn63">11/15</td>
+    <td class="tg-dn63">Week 13 : (Statistics) Election Outcome and Polling Debrief</td>
+    <td class="tg-dn63">
+        <a href="https://nbviewer.jupyter.org/github/data-8/connector/blob/gh-pages/probability/notebook/Polling%20is%20Hard.ipynb">Polling Notebook from Class</a>
+    </td>
+    <td class="tg-dn63">
+        Read <a href="theory-meets-data-draft-current.pdf">Course Text, Chapter 8</a>
+        <br />
+        <a href="hw8.pdf">Homework 8 (Short! Updated 11/21 @ 9:34PM)</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-3xcb">11/22</td>
+    <td class="tg-3xcb">Week 14 : (Data) Covariance and the Correlation Coefficient + Review</td>
+    <td class="tg-3xcb"></td>
+    <td class="tg-3xcb">
+        <a href="last_review.pdf">Review Problems</a>
+        <br />
+        <a href="last_review_sols.pdf">Review Problem Solutions (Updated 11/28 @ 6:51PM)</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-dn63">11/29</td>
+    <td class="tg-dn63">Week 15 : Where do we go from here?</td>
+    <td class="tg-dn63"></td>
+    <td class="tg-dn63">QUIZ 4</td>
+  </tr>
+  
+</table>
+
+<a name="Contact"></a>
+<h2 class="title">Contact Information</h2>
+    <!--<p><b>Time:</b> Day 0:00-0:00 PM</p>-->
+    <!--<p><b>Location:</b> ___ ____ Hall</p>-->
+    <p><b>Instructor:</b> Alexander D'Amour<br />
+    <b>Email:</b> alexdamour@berkeley.edu<br />
+    <b>Office:</b> Evans 387<br />
+    </p>
+    <p><b>UGSI:</b> Adith Balamurugan<br />
+    <b>Email:</b> abalamurugan112@berkeley.edu<br />
+    </p>
+    <p><b>OH:</b> See <a href="https://piazza.com/class/fall2016#stat88">Piazza</a>, and by appointment.</p>
+    <p><b>Note:</b> Please only use email for administrative or scheduling issues. For help on substantive issues in the course like "How do I solve problem X?" please post on <a href="https://piazza.com/class/fall2016#stat88">Piazza</a>.</p>
+
+<a name="CourseInfo"></a>
+<h2 class="title">Course Info</h2>
+<p>
+<b>Prerequisites:</b> One semester of calculus (this includes mastery of algebra and knowledge of derivatives), and <i>successful completion or concurrent registration in Foundations of Data Science</i>. 
+</p>
+<p>
+<b>Required Work:</b> There will be homework assignments due at each lecture. You are encouraged to collaborate on homework assignments but (1) you must turn in your own writeup of your problem solutions and (2) you should list the names of the students you collaborated with on the writeup you turn in.
+<br /><br/>
+There will be 4 quizzes throughout the term, composed of problems that are slight perturbations of the homework problems. The first 3 quizzes will cover the material since the last quiz was given. The last quiz will be cumulative, but will focus mostly on the last quarter of the course.
+<p>
+<b>Grades:</b> Your overall score will be 30% homework and 70% quizzes. No letter grades will be given for quizzes. Course grades will be based on the distribution of overall scores, but there are no set quotas for the number each letter grade that will be given -- in other words, everyone can succeed in this course, and to the extent that there is a curve, it's only there to help.
+</p>
+<p>
+<b>Accommodations for Students with Disabilities:</b>
+Please see Prof. D'Amour as soon as possible if you need particular accommodations, and we will work out the necessary arrangements.
+</p>
+
+<p>
+<b>Academic Integrity:</b>
+You are a member of an academic community at one of the world’s leading research universities. Universities like Berkeley create knowledge that has a lasting impact in the world of ideas and on the lives of others; such knowledge can come from an undergraduate paper as well as the lab of an internationally known professor.  One of the most important values of an academic community is the balance between the free flow of ideas and the respect for the intellectual property of others. Researchers don't use one another's research without permission; scholars and students always use proper citations in papers; professors may not circulate or publish student papers without the writer's permission; and students may not circulate or post materials (handouts, exams, syllabi--any class materials) from their classes without the written permission of the instructor.
+<br/><br/>
+Any test, paper or report submitted by you and that bears your name is presumed to be your own original work that has not previously been submitted for credit in another course unless you obtain prior written approval to do so from your instructor. In all of your assignments, including your homework or drafts of papers, you may use words or ideas written by other individuals in publications, web sites, or other sources, but only with proper attribution. If you are not clear about the expectations for completing an assignment or taking a test or examination, be sure to seek clarification from your instructor or GSI beforehand. Finally, you should keep in mind that as a member of the campus community, you are expected to demonstrate integrity in all of your academic endeavors and will be evaluated on your own merits. The consequences of cheating and academic dishonesty—including a formal discipline file, possible loss of future internship, scholarship, or employment opportunities, and denial of admission to graduate school—are simply not worth it.
+</p>
+</html>
