@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Data Science, Demography, and Immigration</title>
+    <!-- <link rel="icon" href=images/dslogo.png> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen">
+  </head>
+  
+<head>
+<style>
+body {margin:0;}
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F5F5F5;;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+li.nav {
+    float: left;
+}
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    color: gray;
+    background-color: #ddd;
+}
+.active {
+    background-color: #4CAF50;
+}
+.alive {
+  background-color: #ffcda3;
+}
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 9px 18px;
+   -webkit-border-radius: 18px;
+   -moz-border-radius: 18px;
+   border-radius: 18px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 16px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+  
+  .line-separator{
+  height:1px;
+  background:#717171;
+  border-bottom:1px solid #313030;
+}
+
+.title {
+    border-bottom: 1px solid #dedede;
+}
+
+
+.quick-list-item {
+  background-color:#e6f3ff;
+  border-left:solid #0072c1;
+  color:black;
+  margin:10px 0;
+  min-height:100px;
+  padding:10px;
+}
+
+.quick-list-item:hover {
+  background-color:#CAE1FF;
+}
+
+.quick-list-item > hr {
+  margin:5px 0;
+}
+
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ffba7f;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ffba7f;color:#669;background-color:#fff1e5;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ffba7f;color:#039;background-color:#ffac66;}
+.tg .tg-dn63{background-color:#ffd7b7;font-size:14px;color:#000000;vertical-align:top}
+.tg .tg-3xcb{font-size:14px;color:#000000;vertical-align:top}
+.tg .tg-2zhz{font-size:14px;color:#000000;text-align:center;vertical-align:top}
+.tg .tg-modTitle{font-size:14px;color:#0000ff;text-align:left;vertical-align:top}  
+</style>
+</head>
+
+<ul class="nav" align="right">
+  <li class="nav"><a class="alive" href="http://data8.org/connector">Connectors</a></li>
+  <li class="nav"><a href="https://bcourses.berkeley.edu/">bCourses</a></li>
+  <li class="nav"><a href="https://data8.org/">Data 8</a></li>
+</ul>
+
+
+</body>
+
+<body>
+  
+  
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">L&amp;S 88-6 Data Science, Demography, and Immigration</h1>
+      <h2 class="project-tagline">A Fall 2016 Data Science Connector Course </h2>
+      <h3>CCN:34469 | Carl Mason | Tuesday 10:00-12:00 PM | B6 Evans Hall | Units: 2</h3>
+
+    </section>
+
+    <section class="main-content">
+      
+      <h2 class="title">Announcements</h2>
+      
+      <ul>
+        <li>Welcome to Data Science, Demography, and Immigration!</li>
+        <!--li>Our first meeting will be Tuesday Aug 30 (10AM B6 Evans)</li-->
+<!--        <li>Please read the following <b>before our first meeting</b>
+<ol>
+<li> <i>The Young and the Reckless</i> by Robert Sapolsky</li>
+<li><i>1491 (excpert article)</i> by Charles Mann</li>
+</ol>
+I will email you with instructions on how to access them --and what to think about as you read them.
+
+ </li-->
+<li> The text book for this course is <i>Strangers Among Us</i> by Roberto Suro. ISBN=978-0679744566. We will begin reading in around week 5; it will inform your final project.</li>
+      </ul>
+      
+    
+    <hr>
+    
+    
+
+<table class="tg" style="undefined;table-layout: fixed; width: 1020px">
+<colgroup>
+<col style="width: 89px">
+<col style="width: 270px">
+<col style="width: 306px">
+<col style="width: 355px">
+</colgroup>
+  <tr>
+    <th class="tg-2zhz" colspan="4">Calendar</th>
+  </tr>
+ 
+<tr><th class="tg-modTitle" colspan="4"> Module 1 :History and demography of human migration</th></tr> 
+ 
+ <tr>
+    <td class="tg-dn63">Date</td>
+    <td class="tg-dn63">Module</td>
+    <td class="tg-dn63">Reading</td>
+    <td class="tg-dn63">Assignment</td>
+  </tr>
+
+
+ <tr>
+    <td class="tg-3xcb">8/30</td>
+    <td class="tg-3xcb">Introduction: Demography and Immigration Overview</td>
+    <td class="tg-3xcb"> </td>
+    <td class="tg-3xcb">wget http://tinyurl.com/hxeusqo/diversity0.zip</td>
+  </tr>
+
+
+
+
+<tr>
+    <td class="tg-3xcb">9/6</td>
+    <td class="tg-3xcb">Prehistoric and Precolumbian Population and Migration</td>
+    <td class="tg-3xcb"> <a href="http://courses.demog.berkeley.edu/masonDS8F16/readings/sapolsky.pdf">Sapolsky: Young and reckless </a><br>
+<a href="http://courses.demog.berkeley.edu/masonDS8F16/readings/mann.pdf">Mann: 1491</a></td>
+    <td class="tg-3xcb">wget http://tinyurl.com/hxeusqo/worldHistory.zip</td>
+  </tr>
+  <tr>
+    <td class="tg-dn63">9/13</td>
+    <td class="tg-dn63">The Early Republic and the Demographic Transition: The rise of Racial Nativism</td>
+    <td class="tg-dn63"> <a href="http://courses.demog.berkeley.edu/masonDS8F16/readings/NaturalizationAct1790.pdf"> Naturalization Act of 1790 (starts halfway down the page) </a>,
+      <a href="http://www.theatlantic.com/magazine/archive/1896/06/restriction-of-immigration/306011/">Fracis Walker 1896 </a>
+    </td>
+    <td class="tg-dn63"></td>
+  </tr>
+  <tr>
+    <td class="tg-3xcb">9/20</td>
+    <td class="tg-3xcb">US immigration in the 20th and 21st Centuries</td>
+    <td class="tg-3xcb"><a href=  "http://courses.demog.berkeley.edu/masonDS8F16/readings/shulz.pdf">  Schulz: Citizen Kahn</a>; Independent research on the Immigration Act of 1965 provisions? effects? controversies? </td>
+    <td class="tg-3xcb"></td>
+  </tr>
+<tr><th class="tg-modTitle" colspan="4">Module 2: The Westward Migration of Slavery </th></tr> 
+ <tr>
+    <td class="tg-dn63">Date</td>
+    <td class="tg-dn63">Module</td>
+    <td class="tg-dn63">Reading</td>
+    <td class="tg-dn63">Assignment</td>
+  </tr>
+
+  <tr>
+    <td class="tg-3xcb">9/27</td>
+    <td class="tg-3xcb">The demographic context of slavery in the 19th Century</td>
+    <td class="tg-3xcb"><a href="http://docsouth.unc.edu/southlit/fitzhughcan/fitzcan.html#fitz25" target="_new"> Fitzhugh <i>Cabbibals All</i> Chapter 1</a><br>
+      <a href="http://courses.demog.berkeley.edu/masonDS8F16/readings/postell53.pdf"> Postell 1953 </a><br>
+<a href="http://data.unicef.org/child-mortality/under-five.html"> UNICEF report on child mortality</a> 
+    </td>
+    <td class="tg-3xcb"> wget <a href="http://tinyurl.com/hxeusqo/slavery0-DEMO.tgz">http://tinyurl.com/hxeusqo/slavery0-DEMO.tgz</a><br>
+    tar -xzvf slavery0-DEMO.tgz</td>
+  </tr>
+
+    <tr>
+    <td class="tg-3xcb">10/3</td>
+    <td class="tg-3xcb">Life table analysis of slavery</td>
+    <td class="tg-3xcb"> Suro Chapters 1-3 <br>
+    <a href="http://courses.demog.berkeley.edu/masonDS8/readings/MichelleObamaGeneologyNYT.pdf">NY Times on Michelle Obama</a></td>
+
+ <td class="tg-3xcb">wget http://tinyurl.com/hxeusqo/lifeTable1-DEMO.tgz</td>
+    </tr>
+
+        <tr>
+    <td class="tg-3xcb">10/10</td>
+    <td class="tg-3xcb">Estimating migration and its implications for slave families</td>
+    <td class="tg-3xcb"><a href="http://courses.demog.berkeley.edu/masonDS8F16/readings/fogel.pdf"> Fogel and Engerman pp 44-52 (part of Chap 2) <br>
+        <a href="http://utc.iath.virginia.edu/abolitn/dougnarrhp.html"> Frederick Douglass Chap 1 at least</a> </br>
+        <a href="http://courses.demog.berkeley.edu/masonDS8F16/readings/fogelTechCh2.pdf">OPTIONAL: Fogel and Engerman Technical Appendix<a/>
+<br>Suro Chapters 4-6
+    </td>
+    <td class="tg-3xcb">
+      wget <a href="http://tinyurl.com/hxeusqo/SlaveMigration2-DEMO.tgz">
+        http://tinyurl.com/hxeusqo/SlaveMigration2-DEMO.tgz</a> <br>
+      tar -xzvf SlaveMigration2-DEMO.tgz
+    </td>
+  </tr>
+
+ 
+
+<tr><th class="tg-modTitle" colspan="4">Module 3: The geography of Immigrant Experience </th></tr> 
+ <tr>
+    <td class="tg-dn63">Date</td>
+    <td class="tg-dn63">Module</td>
+    <td class="tg-dn63">Reading</td>
+    <td class="tg-dn63">Assignment</td>
+  </tr>
+        <tr>
+    <td class="tg-3xcb">10/17</td>
+    <td class="tg-3xcb">Mapping Immigrant Differences</td>
+    <td class="tg-3xcb"> Suro Chap 7-9  </td>
+    <td class="tg-3xcb">
+  wget <a href="http://tinyurl.com/hxeusqo/Map0.tgz">
+        http://tinyurl.com/hxeusqo/Map0.tgz</a> <br>
+  tar -xzvf Map0.tgz <br>
+<hr>
+   wget <a href="http://tinyurl.com/hxeusqo/slaveMigration84.tgz">
+        http://tinyurl.com/hxeusqo/slaveMigration84.tgz</a> <br>
+  tar -xzvf slaveMigration84.tgz <br>
+
+  
+    </td>
+  </tr>
+
+                <tr>
+    <td class="tg-3xcb">10/21</td>
+    <td class="tg-3xcb">Adjusting Maps for Age Distributions</td>
+    <td class="tg-3xcb"> Keep reading Suro .. </td>
+    <td class="tg-3xcb">
+   wget <a href="http://tinyurl.com/hxeusqo/Mapping2-DEM0.tgz">
+        http://tinyurl.com/hxeusqo/Mapping2-DEMO.tgz</a> <br>
+  tar -xzvf Mapping2-DEMO.tgz <br>
+
+    </td>
+  </tr>
+
+                                <tr>
+    <td class="tg-3xcb">10/28</td>
+    <td class="tg-3xcb">Social Distance and Geographical Distance</td>
+    <td class="tg-3xcb"> Finish reading Suro... </td>
+    <td class="tg-3xcb">
+ wget <a href="http://tinyurl.com/hxeusqo/MappingSocialDistance3DEMO-3.1.tgz">
+        http://tinyurl.com/hxeusqo/MappingSocialDistance3DEMO-3.1.tgz</a> <br>
+  tar -xzvf MappingSocialDistance3DEMO-3.1.tgz <br>
+
+    </td>
+  </tr>
+
+<tr><th class="tg-modTitle" colspan="4">Module 4: Student Projects on the Experience of Hispanic Immigrants in the 21st Century </th></tr> 
+<tr>
+ 
+    <td class="tg-dn63">Date</td>
+    <td class="tg-dn63">Module</td>
+    <td class="tg-dn63">Reading</td>
+    <td class="tg-dn63">Assignment</td>
+  </tr>
+                                <tr>
+    <td class="tg-3xcb">11/01</td>
+    <td class="tg-3xcb"></td>
+    <td class="tg-3xcb">  </td>
+    <td class="tg-3xcb"></td>
+  </tr>
+
+ <tr>
+    <td class="tg-3xcb">11/08</td>
+    <td class="tg-3xcb">Launch independent projects</td>
+    <td class="tg-3xcb">RE-read Suro  </td>
+    <td class="tg-3xcb">Exercise on mapping social distance</td>
+  </tr>
+
+  <tr>
+    <td class="tg-3xcb">11/15</td>
+    <td class="tg-3xcb">Check-in on last week's progrss + set goals for next week +Work on independent projects</td>
+    <td class="tg-3xcb">  </td>
+    <td class="tg-3xcb"></td>
+  </tr>
+
+    <tr>
+    <td class="tg-3xcb">11/22</td>
+     <td class="tg-3xcb">Check-in on last week's progrss + set goals for next week +Work on independent projects</td>
+    <td class="tg-3xcb">  </td>
+    <td class="tg-3xcb"></td>
+  </tr>
+
+ <tr>
+    <td class="tg-3xcb">11/29</td>
+    <td class="tg-3xcb">Finish projects and present results</td>
+    <td class="tg-3xcb">  </td>
+    <td class="tg-3xcb"></td>
+  </tr>
+
+</table>
+    
+<h2 class="title">Course Description</h2>
+
+<p>Humans are a migratory species like no other.  As hunter-gathers, humans migrated from East Africa to every currently inhabited place on earth--except for a few pacific islands and that research station in Antarctica. During modern times humans continue to migrate in astounding numbers from poor countries to rich countries; from rural to urban areas; as refugees, tourists, students and workers both with and without the consent of recieving countries. </p> 
+
+<p>This course will cover the small but important part of the rich history human migration that deals with the development of population of the United States--focusing on the period after the Civil War. We will use the tools of DS8 to answer specific questions that relate to the themes of this course: 
+<ul>
+  <li> The role of Enlightenment and the Reformation in shaping the nation during colonial times.</li>
+  <li> The interlocking roles of technology and demography as both causes and effects of migration to and within the US.</li>
+  <li> The construction of race and ethnicity and its effect on the process of immigrant assimilation.</li>
+</ul>
+</p>
+
+
+<h2 class="title">Office Hours</h2>
+    <p><b>Time:</b> Monday 3-4 PM and by appointment</p>
+    <p><b>Location:</b>2232 Piedmont (2nd floor)</p>
+    <p><b>Instructor:</b> Carl Mason</p>
+    <p><b>Email:</b> cmason@berkeley.edu</p>
+
+</html>
